@@ -1,0 +1,140 @@
+.navbar
+    overflow: hidden
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    background-color: #fff
+    z-index: 999
+    border-bottom: 1px solid rgba(161, 121, 90, 0.1)
+    height: 90px
+    padding-top: 25px
+    &-wrap
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__mobile
+        text-align: right             
+    &__phone
+        font-size: 16px
+        display: block
+        color: #454545
+        text-decoration: none
+        margin-bottom: 5px
+        +light-r
+        position: relative
+    &__phone-before
+        &::before
+            content: ''
+            position: absolute
+            z-index: 22222
+            top: 7px
+            left: -33px
+            width: 100%
+            height: 50px
+            background-image: url(../img/telephone.png)
+            background-repeat: no-repeat
+    &__adress
+        text-align: left
+        position: relative
+        a
+            text-decoration: none
+            color: #454545
+            font-style: normal
+            +light-r
+            &::before
+                content: ''
+                position: absolute
+                z-index: 22222
+                top: 5px
+                left: -30px
+                width: 100%
+                height: 50px
+                background-image: url(../img/gps.png)
+                background-repeat: no-repeat
+    &__time
+        font-size: 16px
+        color: #454545
+        text-decoration: none
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            z-index: 22222
+            top: 5px
+            left: -35px
+            width: 100%
+            height: 50px
+            background-image: url(../img/time.png)
+            background-repeat: no-repeat
+.menu
+    z-index: 22
+    position: fixed        
+    width: 100%
+    left: 0
+    top: 90px
+    transition: 0.1s
+    display: block
+    color: #fff
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: #000
+        opacity: .2
+        z-index: 0
+    &_active
+        display: block
+    &__nav
+        display: flex
+        align-items: center
+        justify-content: space-around
+    &__link
+        text-decoration: none
+        text-transform: uppercase
+        font-size: 14px
+        color: #ffffff
+        opacity: 1
+        z-index: 2
+        +light-r
+        padding: 18px 11px 18px 11px
+        &:hover
+            background-color: rgba(152, 83, 54, .26)
+            border-bottom: 2px solid $accent
+            padding-bottom: 16px
+            padding-top: 17px
+.logo
+    &__text
+        display: block
+        font-size: 28px
+        text-transform: uppercase
+        margin-bottom: 5px
+        +bold-p
+        color: $accent
+        text-decoration: none
+
+@media (max-width: 991px)
+    .navbar
+        &__mobile, &__landline
+            display: none
+    .menu
+        &__link 
+            font-size: 12px
+@media (max-width: 776px)
+    .logo
+        text-align: center
+    .menu
+        top: 60px
+        &-button
+            height: 60px    
+        &__nav
+            flex-direction: column
+        &__link 
+            margin-bottom: 20px
+            font-size: 14px
+@media (max-width: 420px)
+    .logo
+        display: none
